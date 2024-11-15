@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css"
+    />
+    <link href="../static/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="container-fluid">
+      <hgroup>
+        <h1>QR Code Generator</h1>
+      </hgroup>
+    </header>
+    <main class="container-fluid">
+      <form method="POST" action="{{ url_for('get_qr') }}">
+        <fieldset role="group">
+          <input
+            type="url"
+            name="url"
+            placeholder="Enter URL or Name"
+            aria-label="Url"
+            required
+          />
+          <input type="submit" value="Submit" />
+        </fieldset>
+      </form>
+      <article>I am a card</article>
+    </main>
+    <footer class="container-fluid">
+      <nav class="footer-nav">
+        <ul class="left">
+          <li>Finley Sherwell</li>
+        </ul>
+        <ul class="center">
+          <li><span></span></li>
+        </ul>
+        <ul class="right">
+          <li>
+            <a href="https://github.com/finsherwell" class="secondary"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/finley-sherwell-1b43352a3/"
+              class="secondary"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

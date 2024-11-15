@@ -1,0 +1,104 @@
+/* Apply font to the whole page to ensure it is inherited */
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  box-sizing: border-box; /* Ensures padding and margin are accounted for */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  padding: 20px 5px 0; /* Add top padding to push content down, keep side padding */
+}
+
+header hgroup {
+  text-align: center; /* Center text horizontally */
+  line-height: 1.2; /* Reduce line-height to prevent clipping */
+  width: 100%; /* Ensure hgroup stretches across the header */
+  margin-top: 10px; /* Optional: add margin on top of hgroup to push it down */
+}
+
+hr {
+  width: 100%; /* Make sure the <hr> stretches across the full width */
+  margin: 5px 0; /* Reduce margin to ensure it's not too large */
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  justify-content: center; /* Align items to the top */
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  padding: 40px 10px 10px; /* Added more top padding */
+  box-sizing: border-box; /* To include padding in width/height */
+}
+
+main form {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+main article {
+  padding: 20px;
+  margin: 20px 0;
+  height: 30vh;
+  width: 80%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between; /* Ensures spacing between left, center, and right */
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  background-color: #181c25;
+  padding: 20px 15px 0; /* Add top padding to push content down, keep side padding */
+}
+
+footer .footer-nav {
+  display: flex;
+  justify-content: space-between; /* Align the content across the footer */
+  width: 100%;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .left {
+  text-align: left;
+}
+
+footer .center {
+  text-align: center;
+  overflow: hidden; /* Ensures text truncates with ellipsis if it overflows */
+  white-space: nowrap; /* Prevent wrapping */
+  text-overflow: ellipsis; /* Adds ellipsis when text overflows */
+}
+
+footer .right {
+  text-align: right;
+}
+
+footer .right li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Responsive Design: Hide center text on smaller screens */
+@media (max-width: 768px) {
+  footer .center li {
+    display: none; /* Hides the center text on smaller screens */
+  }
+}
