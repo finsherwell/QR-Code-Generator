@@ -9,6 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css"
     />
     <link href="../static/styles.css" rel="stylesheet" />
+    <script src="../static/validate.js" defer></script>
   </head>
   <body>
     <header class="container-fluid">
@@ -29,7 +30,42 @@
           <input type="submit" value="Submit" />
         </fieldset>
       </form>
-      <article>I am a card</article>
+      <article id="settings-article">
+        <hgroup>
+          <h5>QR Customisation Settings</h5>
+        </hgroup>
+        <form id="settings-form">
+          <fieldset role="group">
+            <label for="filetype">File Type:</label>
+            <select name="filetype" aria-label="Filetype" required>
+              <option value="" disabled selected>Select File Type</option>
+              <option value="PNG">PNG</option>
+              <option value="JPEG">JPEG</option>
+              <option value="SVG">SVG</option>
+            </select>
+          
+            <label for="download_name">Download Name:</label>
+            <input
+              type="text"
+              name="download_name"
+              placeholder="Enter Download Name"
+              required
+            />
+          
+            <div class="color-pickers">
+              <div>
+                <label for="fill_color">Fill Color:</label>
+                <input type="color" name="fill_color" value="#000000" required />
+              </div>
+              <div>
+                <label for="back_color">Background Color:</label>
+                <input type="color" name="back_color" value="#FFFFFF" required />
+              </div>
+            </div>
+          </fieldset>
+          <p id="error-message" class="hidden">COMPLETE ALL SETTINGS</p>
+        </form>
+      </article>
     </main>
     <footer class="container-fluid">
       <nav class="footer-nav">

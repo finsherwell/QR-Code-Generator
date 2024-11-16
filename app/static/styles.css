@@ -31,12 +31,13 @@ hr {
 main {
   display: flex;
   flex-direction: column; /* Ensure content stacks vertically */
-  justify-content: center; /* Align items to the top */
+  justify-content: flex-start; /* Align items to the top */
   align-items: center;
   height: 80vh;
   width: 100%;
   padding: 40px 10px 10px; /* Added more top padding */
   box-sizing: border-box; /* To include padding in width/height */
+  gap: 20px; /* Space between URL form and article */
 }
 
 main form {
@@ -45,12 +46,95 @@ main form {
 }
 
 main article {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align elements inside */
   padding: 20px;
   margin: 20px 0;
-  height: 30vh;
-  width: 80%;
+  height: 50vh;
+  width: 80%; /* Stretch the article to 80% of the container */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Title inside the Article */
+main article hgroup {
   text-align: center;
-  box-sizing: border-box;
+  margin-bottom: 20px; /* Add spacing below the title */
+  width: 100%;
+  height: auto; /* Allow height to adjust based on content */
+}
+
+/* Form inside the Article */
+main article form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space between elements */
+  width: 100%;
+  flex-grow: 1; /* Allow form to take up remaining space */
+}
+
+/* Fieldset containing form elements */
+main article form fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* Evenly distribute form elements */
+  height: 80%; /* Take most of the form's space */
+  margin: 0;
+  padding: 0;
+  border: none; /* Optional: remove default fieldset border */
+}
+
+/* General styling for Labels */
+main article form label {
+  text-align: center; /* Center text above inputs */
+  margin-bottom: 5px; /* Add some spacing below the label */
+}
+
+/* Labels, Inputs, and Selects */
+main article form input,
+main article form select {
+  width: 100%; /* Stretch inputs and selects to fit form width */
+  padding: 10px; /* Add more space inside inputs */
+  margin-bottom: 10px; /* Add spacing between elements */
+  box-sizing: border-box; /* Include padding in the element size */
+}
+
+/* Group Fill Color and Background Color side by side */
+main article form .color-pickers {
+  display: flex;
+  flex-direction: row; /* Stack the inputs side by side */
+  justify-content: center; /* Center the color pickers within the container */
+  gap: 20px; /* Add a moderate space between the two color pickers */
+}
+
+main article form .color-pickers > div {
+  display: flex;
+  flex-direction: column; /* Stack label above the input */
+  align-items: center; /* Center-align each color picker */
+  width: auto; /* Allow each color picker to size itself based on content */
+}
+
+main article form .color-pickers label {
+  text-align: center;
+  flex: 1; /* Ensure both pickers take equal width */
+}
+
+main article form .color-pickers input {
+  width: 100%; /* Ensure inputs fill their container */
+  margin: 0; /* Remove unnecessary margins */
+  padding: 10px; /* Add padding for a better feel */
+}
+
+/* Error Message */
+main article form #error-message {
+  color: rgb(5, 134, 134);
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hidden {
+  visibility: hidden; /* Fully hide when not visible */
 }
 
 /* Footer */
